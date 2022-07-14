@@ -17,6 +17,10 @@ public class Singleton {
 
     // 私有化构造器
     private Singleton(String value) {
+        // 加一个判断 看能否防止反射
+        if (instance!=null){
+            throw new RuntimeException("不允许初始化多个实例");
+        }
         this.value = value;
     }
 
