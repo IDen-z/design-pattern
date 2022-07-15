@@ -26,6 +26,7 @@ public class DemoMain {
     /**
      * 通常根据配置或环境选项选择工厂。
      */
+    // 这里不应该是选择工厂 而是选择哪个工厂生成哪个具体的产品
     static void configure() {
         if (System.getProperty("os.name").equals("Windows 10")) {
             dialog = new WindowsDialog();
