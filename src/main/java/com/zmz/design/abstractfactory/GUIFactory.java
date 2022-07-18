@@ -10,6 +10,9 @@ package com.zmz.design.abstractfactory;
  *  抽象工厂生产的是一类，比如gui工厂，button工厂和checkbox工厂都可以通过gui工厂生产
  *  提供了创建产品的接口
  *
+ *  其实可以理解成 GUIfactory 融合了各个 工厂的产品线
+ *  只是提供规范 就是根据各个工厂方法融合
+ *
  */
 public interface GUIFactory {
 
