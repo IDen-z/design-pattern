@@ -7,10 +7,17 @@ import java.util.Base64;
  */
 public class EncryptionDecorator extends DataSourceDecorator {
 
+    /**
+     * 这里穿什么参数的datasource 就会去执行父类的有参构造器
+     */
     public EncryptionDecorator(DataSource dataSource) {
         super(dataSource);
     }
 
+
+    /**
+     * 在这里同样的方法进行业务扩展
+     */
     @Override
     public void writeData(String data) {
         super.writeData(encode(data));

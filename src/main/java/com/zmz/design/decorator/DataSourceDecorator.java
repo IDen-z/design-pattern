@@ -1,5 +1,9 @@
 package com.zmz.design.decorator;
 
+
+/**
+ * 抽象装饰器类  通过有参构造器来实现不同功能的扩展
+ */
 public class DataSourceDecorator implements DataSource {
     private DataSource wrappee;
 

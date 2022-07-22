@@ -2,6 +2,13 @@ package com.zmz.design.decorator;
 
 import java.io.*;
 
+/**
+ * 这是基本功能 datasource只有写数据 和 读数据两个功能
+ *
+ * 但是随着业务需要 需求要求 除了基本的读写功能外 对读写的要求提升
+ *
+ * 首先是在读写的过程中进行 编码
+ */
 public class FileDataSource implements DataSource {
 
     private String name;
