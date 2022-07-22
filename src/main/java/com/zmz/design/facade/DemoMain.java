@@ -2,7 +2,7 @@ package com.zmz.design.facade;
 
 import java.io.File;
 /**
- * @Description: 客户端代码
+ * @Description: 客户端代码  外观模式
  * @Author: Zhu Mengze
  * @Date: 2021/9/29 10:59
  */
