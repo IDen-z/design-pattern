@@ -5,6 +5,15 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class DemoMain {
+    /**
+     * 模板方法设计模式也比较容易理解
+     *
+     * 通过一个抽象类  将公用的设计方法抽取出来  主要用于抽取公共算法 (也就是算法子步骤有变化)的设计模式
+     *
+     *
+     *
+     *
+     */
 
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
