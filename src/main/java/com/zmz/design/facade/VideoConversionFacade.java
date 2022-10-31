@@ -19,21 +19,29 @@ import java.io.File;
  *
  *  在使用时避免出现  上帝对象  与所有的系统发生耦合
  *
+ *
+ *  通过引入本外观模式类 调用者无需知道编码译码 比特率读取的内部子系统的操作
+ *  仅关注该类提供的convertVideo方法即可
+ *
  */
 
 public class VideoConversionFacade {
 
-    //外观模式整理复杂子系统  仅暴露一个接口给客户端调用
+    // 外观模式整理复杂子系统  仅暴露一个接口给客户端调用
     public File convertVideo(String fileName, String format) {
         System.out.println("VideoConversionFacade: conversion started.");
+        // 第一个子系统 VideoFile类 进行创建
         VideoFile file = new VideoFile(fileName);
+        // 第二个子系统 编码译码器 根据传入的VideoFile类 返回Codec编码
         Codec sourceCodec = CodecFactory.extract(file);
+        // 外观模式中的部分业务操作
         Codec destinationCodec;
         if (format.equals("mp4")) {
             destinationCodec = new OggCompressionCodec();
         } else {
             destinationCodec = new MPEG4CompressionCodec();
         }
+        // 第三个子系统 比特率读取 并 转换
         VideoFile buffer = BitrateReader.read(file, sourceCodec);
         VideoFile intermediateResult = BitrateReader.convert(buffer, destinationCodec);
         File result = (new AudioMixer()).fix(intermediateResult);
