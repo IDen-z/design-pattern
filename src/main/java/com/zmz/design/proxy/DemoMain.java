@@ -15,7 +15,9 @@ import com.zmz.design.proxy.proxyimpl.YouTubeCacheProxy;
 public class DemoMain {
 
     public static void main(String[] args) {
+        // 原生下载器
         YouTubeDownloader naiveDownloader = new YouTubeDownloader(new ThirdPartyYouTubeClass());
+        // 引入缓存代理对象后的智能下载器
         YouTubeDownloader smartDownloader = new YouTubeDownloader(new YouTubeCacheProxy());
 
         long naive = test(naiveDownloader);
